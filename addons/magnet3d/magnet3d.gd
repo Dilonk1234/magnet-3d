@@ -1,10 +1,12 @@
 @icon("uid://oph6p7xo0tv")
 extends Area3D
 class_name Magnet3D
+## Magnet3D is a Magnet that attracts RigidBodys in a magnet like behaviour.
+## The rigidbody will move to a defined target position.
 
-@export var target : Node3D
-@export var strength := 20.0
-@export var damping_strength := 5.0
+@export var target : Node3D ## Any RigidBody that enters the magnet will move towards the target.
+@export var strength := 20.0 ## The strength controls how strong the magnet is.
+@export var damping_strength := 5.0 ## the damping will stop the RigidBodys from gittering voilently.
 
 func _physics_process(delta: float) -> void:
 	if not target:
