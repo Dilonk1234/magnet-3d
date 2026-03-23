@@ -1,4 +1,4 @@
-@icon("uid://d8ey0axl4yyh")
+@icon("uid://oph6p7xo0tv")
 extends Area3D
 class_name Magnet3D
 
