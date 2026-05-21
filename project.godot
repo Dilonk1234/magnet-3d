@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="Magnet3D"
+config/version="1.1.0"
 config/tags=PackedStringArray("plugin")
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://oph6p7xo0tv"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/magnet3d/plugin.cfg")
+enabled=PackedStringArray("res://addons/magnet3d/plugin.cfg", "res://addons/version_bumper/plugin.cfg")
 
 [physics]
 
@@ -28,3 +29,7 @@ enabled=PackedStringArray("res://addons/magnet3d/plugin.cfg")
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+
+[version_bumper]
+
+display_mode=0
