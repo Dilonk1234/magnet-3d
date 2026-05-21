@@ -3,6 +3,4 @@
 
 # Only include the addons folder when downloading from the Asset Library.
 /**        export-ignore
-/addons    !export-ignore
-/addons/** !export-ignore
-/addons/version_bumber export-ignore
+/addons/magnet3d    !export-ignore
