@@ -5,3 +5,4 @@
 /**        export-ignore
 /addons    !export-ignore
 /addons/** !export-ignore
+/addons/version_bumber export-ignore
