@@ -1,4 +1,5 @@
 @icon("uid://oph6p7xo0tv")
+@tool
 extends Area3D
 class_name Magnet3D
 ## Magnet3D is a Magnet that attracts RigidBodys in a magnet like behaviour.
@@ -9,8 +10,11 @@ class_name Magnet3D
 @export var damping_strength := 5.0 ## the damping will stop the RigidBodys from gittering voilently.
 
 func _physics_process(delta: float) -> void:
-	if not target:
-		push_error(get_path(), " Needs a target. Magnet will do nothing.")
+	if Engine.is_editor_hint():
+		update_configuration_warnings()
+		return
+	
+	if not monitoring:
 		return
 	
 	for x: Node3D in get_overlapping_bodies():
@@ -23,3 +27,9 @@ func _physics_process(delta: float) -> void:
 		if distance > 0:
 			var force := direction * strength
 			x.apply_force(force + damping)
+
+func _get_configuration_warnings() -> PackedStringArray:
+	var warnings : PackedStringArray
+	if not target:
+		warnings.append("Magnet3D needs a target.")
+	return warnings
